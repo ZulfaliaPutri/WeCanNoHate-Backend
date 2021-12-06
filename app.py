@@ -8,6 +8,7 @@ from flask_cors import CORS, cross_origin
 import pandas as pd
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/ping")
@@ -18,9 +19,7 @@ def ping():
 @app.route("/predict", methods=["POST"])
 @cross_origin()
 def trydo():
-    input_payloads = request.json['inputs']
-    if (not(input_payloads)):
-        return "fail"
+    input_payloads = request.json["inputs"]
 
     predictions = model.predict(input_payloads)
     json_result = pd.Series(predictions).to_json(orient="values")
