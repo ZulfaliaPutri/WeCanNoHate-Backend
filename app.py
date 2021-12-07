@@ -18,7 +18,7 @@ def ping():
 
 @app.route("/predict", methods=["POST"])
 @cross_origin()
-def trydo():
+def predict_function():
     input_payloads = request.json["inputs"]
 
     predictions = model.predict(input_payloads)
@@ -26,6 +26,9 @@ def trydo():
     return json_result
 
 
+###
+# this function is required by the model as it needs the text to be tokenized first with the same tokenization algorithm
+# before supplied to the machine learning model
 def tokenize(text):
     tokenizer = TweetTokenizer()
     return tokenizer.tokenize(text)
