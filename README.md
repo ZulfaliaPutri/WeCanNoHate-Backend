@@ -13,6 +13,12 @@ CD yang ditunjuk ke direktori diinginkan, kemudian jalankan perintah dibawah ini
 ```bash
 git clone https://github.com/ZulfaliaPutri/WeCanNoHate-Backend
 ```
+## Components that need to be installed
+Sebelum menjalankan backend, pastikan terlebih dahulu pada VSCode sudah melakukan install pada terminal sebagai berikut :
+* pip install joblib
+* pip install nltk
+* pip install flask_cors
+* pip install pandas
 
 ## Cara Menjalankan Project ini
 1. Melakukan clone yang dapat dilanjutkan dengan membuka VSCode
